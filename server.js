@@ -10,11 +10,11 @@ app.use(express.json());
 app.post('/send', async (req, res) => {
     const { nombre, email, mensaje } = req.body;
 
-    // Configurar el transportador SMTP
+  
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'TU_CORREO@gmail.com', // Cambia esto por tu correo
+            user: 'oficina20sanjuan@gmail.com', // Cambia esto por tu correo
             pass: 'TU_CONTRASEÑA_O_APP_PASSWORD' // Usa una contraseña de aplicación si usás Gmail
         }
     });
