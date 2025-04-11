@@ -14,10 +14,11 @@ app.post('/send', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'oficina20sanjuan@gmail.com', // Cambia esto por tu correo
-            pass: 'TU_CONTRASEÑA_O_APP_PASSWORD' // Usa una contraseña de aplicación si usás Gmail
+            user: 'oficina20sanjuan@gmail.com', 
+            pass: 'TU_CONTRASEÑA_O_APP_PASSWORD' 
         }
     });
+
 
     try {
         await transporter.sendMail({

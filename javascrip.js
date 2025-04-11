@@ -1,14 +1,26 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("JavaScript is working!");
 
-    const button = document.getElementById("myButton");
-    if (button) {
-        button.addEventListener("click", () => {
-            alert("Button clicked!");
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        mensaje: document.getElementById("mensaje").value
+    };
+
+    try {
+        const res = await fetch("https://TU_BACKEND.onrender.com/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
         });
-    } else {
-        console.warn("Button with id 'myButton' not found.");
+
+        const result = await res.json();
+        alert(result.message);
+    } catch (error) {
+        alert("Error al enviar el mensaje.");
     }
 });
+
 
