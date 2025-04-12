@@ -15,7 +15,8 @@ app.post('/send', async (req, res) => {
         service: 'gmail',
         auth: {
             user: 'oficina20sanjuan@gmail.com', 
-            pass: 'TU_CONTRASEÑA_O_APP_PASSWORD' 
+            pass: 'mmsl afuw nlhe eqdc '
+            
         }
     });
 
@@ -38,3 +39,4 @@ app.post('/send', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
