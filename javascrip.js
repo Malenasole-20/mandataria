@@ -1,5 +1,3 @@
-
-
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
@@ -10,7 +8,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     };
 
     try {
-        const res = await fetch("https://TU_BACKEND.onrender.com/send", {
+        const res = await fetch("http://localhost:3000/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
@@ -20,7 +18,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert(result.message);
     } catch (error) {
         alert("Error al enviar el mensaje.");
+        console.error(error);
     }
 });
-
 
