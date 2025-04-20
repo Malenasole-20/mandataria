@@ -1,8 +1,9 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -10,16 +11,13 @@ app.use(express.json());
 app.post('/send', async (req, res) => {
     const { nombre, email, mensaje } = req.body;
 
-  
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'oficina20sanjuan@gmail.com', 
+            user: 'oficina20sanjuan@gmail.com',
             pass: 'mmsl afuw nlhe eqdc '
-            
         }
     });
-
 
     try {
         await transporter.sendMail({
@@ -39,4 +37,3 @@ app.post('/send', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
-

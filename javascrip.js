@@ -21,4 +21,3 @@ document.getElementById("contactForm").addEventListener("submit", async function
         console.error(error);
     }
 });
-
