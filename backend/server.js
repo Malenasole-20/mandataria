@@ -38,7 +38,7 @@ app.post('/send', async (req, res) => {
         console.error(error);
         res.status(500).json({ success: false, message: 'Error al enviar el correo' });
     }
-});
+N});
 
 // Arrancar el servidor
 app.listen(PORT, () => {

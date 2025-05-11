@@ -17,6 +17,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         const result = await res.json();
         alert(result.message);
     } catch (error) {
+
         alert("Error al enviar el mensaje.");
         console.error(error);
     }
