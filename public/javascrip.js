@@ -13,6 +13,10 @@ document.getElementById("contactForm").addEventListener("submit", async function
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
         });
+        // Después de las rutas existentes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
         const result = await res.json();
         alert(result.message);
